@@ -1,28 +1,48 @@
+//assign elements to variables
+//firstName section
 const submitBtn = document.getElementById("submit");
-const firstName = document.getElementById("first-name");
-const firstNameErrorMessage = document.getElementById("firstName-error-message");
+const firstNameContainer = document.getElementById("first-name");
+const firstNameErrorMessage = document.getElementById("firstNameErrorMessage");
+const form = document.getElementById("form");
 
-const lastName = document.getElementById("last-name");
-const lastNameErrorMessage = document.getElementById("lastName-error-message");
+//lastName section
+const lastNameContainer = document.getElementById("last-name");
+const lastNameErrorMessage = document.getElementById("lastNameErrorMessage");
 
-const emailAddress = document.getElementById("email");
-const emailErrorMessage = docuemt.getElementById("email-error-message")
+//email section
+const emailContainer = document.getElementById("email");
+const emailErrorMessage = document.getElementById("emailErrorMessage");
 
 
 
-
-submitBtn.addEventListener('click', function(event){
+//add event listener to submit button
+submitBtn.addEventListener("click", function(event){
     event.preventDefault();
 
-    //validation for firstName
-    if(firstName.value.trim() === ""){
-        firstName.style.borderColor = "#ff0000";
+    if(firstNameContainer.value.trim() === ""){
+        firstNameContainer.style.borderColor = "red";
         firstNameErrorMessage.style.display = "block";
     } else {
-        firstName.style.borderColor = "";
+        firstNameContainer.style.borderColor = "";
         firstNameErrorMessage.style.display = "none";
     }
 
-    
-    
-});
+    if(lastNameContainer.value.trim() === ""){
+        lastNameContainer.style.borderColor = "red";
+        lastNameErrorMessage.style.display = "block";
+    } else {
+        lastNameContainer.style.borderColor = "";
+        lastNameErrorMessage.style.display = "none";
+    }
+
+    if(emailContainer.value.trim() === ""){
+        emailContainer.style.borderColor = "red";
+        emailErrorMessage.style.display = "block";
+    } else {
+        emailContainer.style.borderColor = "";
+        emailErrorMessage.style.display = "none";
+    }
+
+
+
+})
