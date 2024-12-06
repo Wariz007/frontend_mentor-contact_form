@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!--Form tag-->
+  <form id="contact-form">
+
+    <div>
+      <h1>Contact Us</h1>
+
+    <!--names container-->
+    <div id="names-container">
+      <span class="names-con" id="names-first">
+        <label for="first-name">First Name:</label><br>
+        <input type="text" id="first-name" class="names" required name="first-name"><br>
+      </span>
+
+      <span class="names-con">
+        <label for="last-name">Last Name:</label><br>
+        <input type="text" id="last-name" class="names" required name="last-name">
+      </span>
+    </div>
+
+    <!--email container-->
+    <div id="email-container">
+    <label for="email">Email Address:</label><br>
+    <input type="text" id="email" required placeholder="Enter your email address" name="email">
+    </div>
+
+    <!--query container-->
+    <p id="query-font">Query type</p>
+
+    <div id="query-container">
+      <span class="query-con">
+      <input type="radio" id="general-query" name="query" required>
+      <label for="general-query">General Query</label>
+      </span>
+
+      <span class="query-con">
+      <input type="radio" id="support-request" name="query" required>
+      <label for="support-request">Support Request</label>
+      </span>
+    </div>
+
+    <!--message container-->
+    <label for="message">Message:</label><br>
+    <textarea placeholder="put your message here" id="message" name="message"></textarea>
+
+    <!--checkbox container-->
+    <div id="checkbox-container">
+    <input type="checkbox" id="checkbox" required>
+    <label for="checkbox">I consent to being contacted by the team</label>
+    </div>
+
+    <button id="submit" type="submit">Submit</button>
+    </div>
+  </form>
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

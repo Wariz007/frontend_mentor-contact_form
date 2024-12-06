@@ -1,0 +1,177 @@
+/*reset browser default settings*/
+html, body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 11px;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #E0F1E7;
+}
+body{
+    padding: 1rem;
+    margin: auto;
+}
+
+/*reset h1 default settings*/
+h1{
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/*form tag codes*/
+form{
+    background-color: white;
+    padding: 3rem;
+    width: 90%;
+    max-width: 600px;
+    margin: 2rem auto;
+    border-radius: 5px;
+}
+
+/*names-container*/
+#names-container{
+    display: flex;
+    /*border: 2px solid tomato;*/
+    box-sizing: border-box;
+    text-align: left;
+}
+input[class="names"]{
+    width: 90%;
+    padding: 0.8rem;
+    border-color: #E0F1E7;
+    border-radius: 5px;
+    border-width: 1.8px;
+    margin: 1rem 0;
+}
+@media (max-width: 390px){
+    input[class="names"]{
+        width: 85%;
+    }
+}
+
+
+.names-con{
+    width: 100%;
+    padding: 2rem 0;
+}
+
+#names-first{
+    margin-right: 1rem;
+}
+
+/*email container*/
+#email-container{
+    padding: 0 0 0;
+}
+input[id="email"]{
+    width: 96%;
+    padding: 0.8rem;
+    border-color: #E0F1E7;
+    border-radius: 5px;
+    border-width: 1.8px;
+    margin: 1rem 0;
+}
+@media (max-width: 390px){
+    input[id="email"]{
+        width: 90%;
+    }
+}
+
+/*query container*/
+#query-container{
+    /*border: 2px solid rgb(28, 28, 28);*/
+    display: flex;
+    box-sizing: border-box;
+    text-align: left;
+    padding: 0 0 2rem;
+
+}
+.query-con{
+    border: 2px solid #E0F1E7;
+    border-radius: 5px;
+    border-width: 2px;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    margin: 0 1rem 0 0.2rem;
+}
+@media (max-width: 390px){
+    .query-con{
+        padding: 1rem;
+    }
+}
+
+#query-font{
+    font-size: 1.2rem;
+}
+
+/*message container*/
+#message{
+    width: 95%;
+    height: 150px;
+    border-radius: 5px;
+    margin-top: 1rem;
+    padding: 1rem;
+    resize: none;
+}
+@media (max-width: 390px){
+    #message{
+        width: 90%;
+    }
+}
+
+/*checkbox container*/
+#checkbox-container{
+    margin: 3rem 0;
+}
+
+/*button container*/
+#submit{
+    width: 100%;
+    padding: 1rem 0;
+    background-color: green;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#submit:hover{
+    background-color: rgb(2, 147, 2);
+    border: 0;
+}
+
+/*label section*/
+label{
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.774);
+    font-weight: 500;
+}
+
+@media (max-width: 390px) {
+    label{
+        font-size: 1rem;
+    }
+}
+
+label[for="checkbox"]{
+    margin: 0 1rem;
+}
+
+input:focus, textarea:focus, #submit:focus {
+    outline: 2px solid #54ed93;;
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 2rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/*error message section*/
