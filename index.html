@@ -18,19 +18,22 @@
     <div id="names-container">
       <span class="names-con" id="names-first">
         <label for="first-name">First Name:</label><br>
-        <input type="text" id="first-name" class="names" required name="first-name"><br>
+        <input type="text" id="first-name" class="names" name="first-name"><br>
+        <p id="firstName-error-message" style="color: red; display: none;">First name is required!</p>
       </span>
 
       <span class="names-con">
         <label for="last-name">Last Name:</label><br>
-        <input type="text" id="last-name" class="names" required name="last-name">
+        <input type="text" id="last-name" class="names" name="last-name">
+        <p id="lastName-error-message" style="color: red; display: none;">Last name is required!</p>
       </span>
     </div>
 
     <!--email container-->
     <div id="email-container">
     <label for="email">Email Address:</label><br>
-    <input type="text" id="email" required placeholder="Enter your email address" name="email">
+    <input type="text" id="email" placeholder="Enter your email address" name="email">
+    <p id="email-error-message" style="color: red; display: none;">Your Email address is required!</p>
     </div>
 
     <!--query container-->
@@ -38,12 +41,12 @@
 
     <div id="query-container">
       <span class="query-con">
-      <input type="radio" id="general-query" name="query" required>
+      <input type="radio" id="general-query" name="query">
       <label for="general-query">General Query</label>
       </span>
 
       <span class="query-con">
-      <input type="radio" id="support-request" name="query" required>
+      <input type="radio" id="support-request" name="query">
       <label for="support-request">Support Request</label>
       </span>
     </div>
@@ -54,7 +57,7 @@
 
     <!--checkbox container-->
     <div id="checkbox-container">
-    <input type="checkbox" id="checkbox" required>
+    <input type="checkbox" id="checkbox">
     <label for="checkbox">I consent to being contacted by the team</label>
     </div>
 

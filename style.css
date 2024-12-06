@@ -175,3 +175,9 @@ input:focus, textarea:focus, #submit:focus {
 }
 
 /*error message section*/
+.error-message{
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: red;
+    display: none;
+}
