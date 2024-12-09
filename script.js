@@ -1,79 +1,126 @@
 //assign elements to variables
-//firstName section
-const submitBtn = document.getElementById("submit");
+const submit = document.getElementById("submit");
+const form = document.getElementById("form");
+const successMessage = document.getElementById("success-parent");
+
+//first name 
 const firstNameContainer = document.getElementById("first-name");
 const firstNameErrorMessage = document.getElementById("firstNameErrorMessage");
-const form = document.getElementById("form");
 
-//lastName section
+//last name
 const lastNameContainer = document.getElementById("last-name");
 const lastNameErrorMessage = document.getElementById("lastNameErrorMessage");
 
-//email section
+//email
 const emailContainer = document.getElementById("email");
 const emailErrorMessage = document.getElementById("emailErrorMessage");
 
-//query section
+//queries
+const queries = document.querySelectorAll('input[name="query"]');
 const queryErrorMessage = document.getElementById("queryErrorMessage");
-const queries = document.querySelector('input[type="radio"]');
 
-//message section
-const messageElement = document.getElementById("message");
+//message
+const messageContainer = document.getElementById("message");
 const messageErrorMessage = document.getElementById("messageErrorMessage");
 
-//checkBox section
-const checkbox = document.querySelector('input[type="checkbox"]');
+//checkbox
+const checkbox = document.getElementById("checkbox");
 const checkboxErrorMessage = document.getElementById("checkboxErrorMessage");
 
 
-
-//add event listener to submit button
-submitBtn.addEventListener("click", function(event){
-    event.preventDefault();
-
+//encapsulate logic in functions
+const validFirstName = () => {
     if(firstNameContainer.value.trim() === ""){
         firstNameContainer.style.borderColor = "red";
         firstNameErrorMessage.style.display = "block";
+        return false;
     } else {
         firstNameContainer.style.borderColor = "";
         firstNameErrorMessage.style.display = "none";
+        return true;
     }
-
+}
+const validLastName = () => {
     if(lastNameContainer.value.trim() === ""){
         lastNameContainer.style.borderColor = "red";
         lastNameErrorMessage.style.display = "block";
+        return false;
     } else {
         lastNameContainer.style.borderColor = "";
         lastNameErrorMessage.style.display = "none";
+        return true;
     }
-
+}
+const validEmail = () => {
     if(emailContainer.value.trim() === ""){
         emailContainer.style.borderColor = "red";
         emailErrorMessage.style.display = "block";
+        return false;
     } else {
         emailContainer.style.borderColor = "";
         emailErrorMessage.style.display = "none";
+        return true;
     }
-
-    if(!queries.checked) {
+}
+const validQuery = () => {
+    if(![...queries].some(query => query.checked)){
         queryErrorMessage.style.display = "block";
+        return false;
     } else {
         queryErrorMessage.style.display = "none";
+        return true;
     }
-
-    const message = messageElement.value.trim();
-    if(message === ""){
+}
+const validMessage = () => {
+    if(messageContainer.value.trim() === ""){
         messageErrorMessage.style.display = "block";
+        return false;
     } else {
         messageErrorMessage.style.display = "none";
+        return true;
     }
-
+}
+const validCheckbox = () => {
     if(!checkbox.checked){
         checkboxErrorMessage.style.display = "block";
-    } else {
-        checkboxErrorMessage.style.display = "none";
+        return false;
     }
+    checkboxErrorMessage.style.display = "none";
+    return true;
+}
 
 
+//this prevents the form from submitting unless all conditions are met
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+})
+
+//submit button
+submit.addEventListener("click", () => {
+
+    const isFirstNameValid = validFirstName();
+    const isLastNameValid = validLastName();
+    const isEmailValid = validEmail();
+    const isQueryValid = validQuery();
+    const isMessageValid = validMessage();
+    const isCheckBoxValid = validCheckbox();
+
+    if( isFirstNameValid &&
+        isLastNameValid &&
+        isEmailValid &&
+        isQueryValid &&
+        isMessageValid &&
+        isCheckBoxValid 
+    ){
+        successMessage.style.display = "block"
+        form.reset();
+
+        //clears success message after 3 seconds
+        setTimeout(() => {
+            successMessage.style.display = "none"
+        }, 3000);
+    } else {
+        successMessage.style.display = "none";
+    }
 
 })

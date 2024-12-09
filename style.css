@@ -11,6 +11,46 @@ html, body{
 body{
     padding: 1rem;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*success container settings*/
+#success-parent{
+    display: none;
+}
+#success-container{
+    background-color: #2A4244;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 10px;
+}
+#success-container p{
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.747);
+    margin: 0;
+    margin-top: 1.2rem;
+}
+#first-paragraph p{
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
+#first-paragraph img{
+    width: 2rem;
+}
+#first-paragraph{
+    display: flex;
+    justify-content: left;
+    align-items: center;
 }
 
 /*reset h1 default settings*/
